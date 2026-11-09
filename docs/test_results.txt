@@ -1,0 +1,42 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.11.3, pytest-9.2.0, pluggy-1.7.0 -- D:\Nationwide Demand Forecasting\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\Nationwide Demand Forecasting
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.1, dash-4.5.0, platformdirs-4.14.2
+collecting ... collected 13 items
+
+tests/test_features.py::test_lag_names_are_at_least_horizon PASSED       [  7%]
+tests/test_features.py::test_lag_28_is_sales_28_days_earlier PASSED      [ 15%]
+tests/test_features.py::test_lags_do_not_leak_across_series PASSED       [ 23%]
+tests/test_features.py::test_future_sales_cannot_change_earlier_features PASSED [ 30%]
+tests/test_metrics.py::test_wape PASSED                                  [ 38%]
+tests/test_metrics.py::test_rmse PASSED                                  [ 46%]
+tests/test_metrics.py::test_coverage PASSED                              [ 53%]
+tests/test_optimize.py::test_budget_respected_and_orders_non_negative PASSED [ 61%]
+tests/test_optimize.py::test_store_capacity_respected PASSED             [ 69%]
+tests/test_optimize.py::test_without_limits_order_matches_newsvendor_rule PASSED [ 76%]
+tests/test_optimize.py::test_expensive_shortage_items_are_prioritised_under_tight_capacity PASSED [ 84%]
+tests/test_reconcile.py::test_reconciliation_makes_forecasts_add_up PASSED [ 92%]
+tests/test_reconcile.py::test_reconciled_output_is_complete_and_non_negative PASSED [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\dash\testing\plugin.py:104
+  D:\Nationwide Demand Forecasting\.venv\Lib\site-packages\dash\testing\plugin.py:104: PytestRemovedIn10Warning: The hookimpl pytest_addhooks uses old-style configuration options (marks or attributes).
+  Please use the pytest.hookimpl(tryfirst=True) decorator instead
+   to configure the hooks.
+   See https://docs.pytest.org/en/latest/deprecations.html#configuring-hook-specs-impls-using-markers
+    @pytest.mark.tryfirst
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 13 passed, 4 warnings in 163.84s (0:02:43) ==================
