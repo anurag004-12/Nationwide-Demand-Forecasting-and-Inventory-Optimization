@@ -1,0 +1,5 @@
+policy,fill_rate,leftover_units,total_cost
+Order the median forecast,0.875,1973,2283.2
+Even 1.1x median (same capacity),0.919,2833,1633.9
+"Optimized, store capacity",0.897,3404,1469.0
+"Optimized, no limit",0.998,18413,1143.4

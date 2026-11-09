@@ -1,0 +1,8 @@
+model,level,WAPE,RMSE
+Naive,item-store,0.4947,10.2368
+LightGBM,item-store,0.383,7.4564
+LightGBM + MinT,item-store,0.3827,7.4143
+Naive,store,0.1026,91.0773
+LightGBM,store,0.0952,85.9063
+LightGBM + MinT,store,0.0975,82.1595
+Prophet,store,0.1187,95.0182
