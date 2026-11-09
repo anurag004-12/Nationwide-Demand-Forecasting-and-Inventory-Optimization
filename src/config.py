@@ -13,3 +13,5 @@ STATE = "CA"
 DEPARTMENT = "FOODS_3"
 TOP_N_ITEMS = 50                  
 QUANTILES = [0.05, 0.25, 0.5, 0.75, 0.95]
+
+CAPACITY_FACTOR = 1.1     # shelf space per store = 110% of median weekly demand (assumption)
