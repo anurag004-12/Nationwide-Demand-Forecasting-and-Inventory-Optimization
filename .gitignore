@@ -1,0 +1,33 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# Packaging and test caches
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+notebooks/scratch.ipynb
+
+# Data (too big for GitHub; the README links to Kaggle)
+/data/raw/
+/data/processed/
+
+# Saved models and training logs (top-level only; src/models/ is real code)
+/models/
+lightning_logs/
+*.ckpt
+
+# Demo video (upload to Drive and link it in the README instead)
+docs/demo.mp4
+*.mp4
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
