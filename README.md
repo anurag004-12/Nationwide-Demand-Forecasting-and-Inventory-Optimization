@@ -54,6 +54,9 @@ Holdout: last 28 days of the data (days 1914 to 1941). Lower is better.
 | Naive (same weekday, 28 days ago) | 0.4947 | 10.24 |
 | LightGBM | 0.3830 | 7.46 |
 | LightGBM + MinT reconciliation | 0.3827 | 7.41 |
+| TFT (15 epochs, single run) | 0.3819 | 7.91 |
+
+The TFT scores about the same as LightGBM on WAPE and about 6% worse on RMSE. It predicts the median, which favours WAPE, while LightGBM predicts the mean, which favours RMSE. A 2-epoch test scored better (WAPE 0.3674), which suggests overfitting; epochs were fixed in advance and not tuned on the test window. TFT forecasts are not reconciled and are not used for ordering.
 
 **Store level (sum of items per store; the only level Prophet is scored at)**
 

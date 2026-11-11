@@ -27,7 +27,7 @@ def card(title, value):
                     style={"padding": "10px 16px", "border": "1px solid #ddd", "borderRadius": 8})
 
 
-best = metrics[metrics["level"] == "item-store"].sort_values("WAPE").iloc[0]
+best = metrics[(metrics["level"] == "item-store") & (metrics["model"] == "LightGBM + MinT")].iloc[0]
 
 app = Dash(__name__)
 server = app.server            # for deployment: gunicorn app.app:server
