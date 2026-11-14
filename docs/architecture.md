@@ -1,6 +1,6 @@
 # Architecture and data documentation
 
-(the Mermaid diagram from the README)
+![Architecture](docs/architecture.png)
 
 ## Design decisions
 

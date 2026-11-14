@@ -12,35 +12,35 @@ Chosen so the full pipeline runs on a laptop.
 
 ```mermaid
 flowchart LR
-    A[M5 CSVs<br/>calendar, sales, prices] --> B[data.py<br/>subset, melt, merge]
-    B --> C[features.py<br/>lags >= 28, rolling, price, calendar]
+    A["M5 CSVs<br/>calendar, sales, prices"] --> B["data.py<br/>subset, melt, merge"]
+    B --> C["features.py<br/>lags >= 28, rolling, price, calendar"]
 
     subgraph Models
-        N[Naive]
-        L[LightGBM point]
-        Q[LightGBM quantiles<br/>5/25/50/75/95%]
-        P[Prophet<br/>store and state totals]
-        T[TFT<br/>Colab GPU, optional]
+        N["Naive"]
+        L["LightGBM point"]
+        Q["LightGBM quantiles<br/>5/25/50/75/95%"]
+        P["Prophet<br/>store and state totals"]
+        T["TFT<br/>Colab GPU, optional"]
     end
 
     B --> P
     C --> N
     C --> L
     C --> Q
-    C -. features.parquet .-> T
+    C -.->|"features.parquet"| T
 
-    L --> R[reconcile.py<br/>MinT]
+    L --> R["reconcile.py<br/>MinT"]
     P --> R
-    Q --> O[optimize.py<br/>OR-Tools]
+    Q --> O["optimize.py<br/>OR-Tools"]
 
-    Models --> E[Evaluation<br/>WAPE, RMSE, coverage]
-    T -. tft_preds.csv .-> E
+    Models --> E["Evaluation<br/>WAPE, RMSE, coverage"]
+    T -.->|"tft_preds.csv"| E
 
-    R --> G[outputs/*.csv]
+    R --> G["outputs/*.csv"]
     O --> G
     Q --> G
     E --> G
-    G --> D[Dash app]
+    G --> D["Dash app"]
 ```
 
 ## Results
